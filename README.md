@@ -31,16 +31,16 @@ This project is a comprehensive analysis of the [Energy Efficiency Data Set](htt
 
 ### 1. Data Understanding
 - Reviewed dataset attributes and structure.
-- Identified that `Overall Height` and `Relative Compactness` are perfectly negatively correlated.
 
 ### 2. Data Preprocessing
-- Removed `Overall Height` due to perfect multicollinearity.
-- Applied one-hot encoding to categorical variables (Orientation, Glazing Area Distribution).
-- Normalized features using Min-Max scaling.
+- Removed `Surface Area` due to perfect multicollinearity.
+- Removed `Orientation` due to reduce dimension.
+- Applied binarization and transform to categorical variables (Glazing Area Distribution).
+- Check outliers and distribution patterns using boxplots and pairplots.
 
 ### 3. Exploratory Data Analysis (EDA)
 - Visualized correlations using heatmaps.
-- Detected outliers and distribution patterns using boxplots and pairplots.
+- Identified that `Surface Area` and `Relative Compactness` are highly correlated.
 
 ### 4. Model Building
 
@@ -62,16 +62,16 @@ Used the following metrics for both targets:
 
 | Model Type         | Target | MSE     | MAE     | R² Score |
 |--------------------|--------|---------|---------|----------|
-| Linear Regression  | Y1     | ~6.57   | ~1.96   | ~0.92    |
-| Polynomial (deg=3) | Y1     | ~1.06   | ~0.62   | ~0.99    |
-| Linear Regression  | Y2     | ~9.57   | ~2.34   | ~0.96    |
-| Polynomial (deg=3) | Y2     | ~2.35   | ~1.03   | ~0.99    |
+| Linear Regression  | Y1     | 16.6117 | 3.3915  | 0.8370   |
+| Polynomial (deg=3) | Y1     | 0.2940  | 0.4039  | 0.9971   |
+| Linear Regression  | Y2     | 12.2353 | 2.4978  | 0.8659   |
+| Polynomial (deg=3) | Y2     | 3.3726  | 1.2419  | 0.9630   |
 
 > Polynomial regression significantly improved the model accuracy for both Heating and Cooling Load prediction.
 
 ## 👥 Contributors
 
-This project was developed as part of a group assignment in a data analysis course:
+This project was developed as part of a group assignment in a Machine Learning course:
 
 - **Group 6 Members**
   1. Alhusna Hanifah (2208107010060)
