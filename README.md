@@ -1,0 +1,1 @@
+# Kelompok_6_Tugas02_Linear_Regression
